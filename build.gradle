@@ -60,7 +60,7 @@ configure(allprojects) {
         }
         repositories {
             maven {
-                url "$buildDir/repo" // change to point to your repo, e.g. http://my.org/repo
+                url "https://dev.cloudidentity.co.uk/nexus/content/repositories/snapshots" // change to point to your repo, e.g. http://my.org/repo
             }
         }
     }
