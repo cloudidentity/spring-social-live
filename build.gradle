@@ -11,6 +11,7 @@ configure(allprojects) {
     apply plugin: 'java'
     apply plugin: 'eclipse'
     apply plugin: 'idea'
+    apply plugin: 'maven-publish'
 
     group = 'org.springframework.social'
 
@@ -49,6 +50,19 @@ configure(allprojects) {
         testCompile ("org.springframework:spring-test:$springVersion")
         testCompile ("org.springframework:spring-test-mvc:$springTestMVC")
         testCompile ("org.springframework.security:spring-security-crypto:$springSecurityVersion")
+    }
+
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+            }
+        }
+        repositories {
+            maven {
+                url "$buildDir/repo" // change to point to your repo, e.g. http://my.org/repo
+            }
+        }
     }
 
     // servlet-api (2.5) and tomcat-servlet-api (3.0) classpath entries should not be
@@ -240,7 +254,7 @@ configure(rootProject) {
 
     task wrapper(type: Wrapper) {
         description = 'Generates gradlew[.bat] scripts'
-        gradleVersion = '1.4'
+        gradleVersion = '1.8'
     }
 
 }
