@@ -24,8 +24,8 @@ configure(allprojects) {
       junitVersion = '4.11'
       mockitoVersion = '1.9.5'
       servletApiVersion = '2.5'
-      springVersion = '3.1.2.RELEASE'
-      springSecurityVersion = '3.1.4.RELEASE'
+      springVersion = '3.2.3.RELEASE'
+      springSecurityVersion = '3.2.0.RC1'
       springTestMVC = '1.0.0.M2'
     }
 
@@ -39,7 +39,7 @@ configure(allprojects) {
         maven { url "http://repo.spring.io/libs-release" }
         maven { url "http://repo.spring.io/libs-milestone" }
         maven { url "http://repo.spring.io/libs-snapshot" }
-        maven { url "http://repo.spring.io/ebr-maven-external" }
+        maven { url "http://repo.spring.io/plugins-release" }
     }
 
     dependencies {
